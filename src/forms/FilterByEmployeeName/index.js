@@ -6,11 +6,12 @@ class FilterByEmployeName extends React.Component {
   render() {
     return (
       <form>
-        <label style={{ display: 'block', width: '90%' }}>
+        <label className="mb-1" style={{ display: 'block', width: '90%' }}>
           Attività da completare
         </label>
         <Select
-          style={{ width: '90%' }}
+          className="mb-2"
+          style={{ width: '90%', 'background-color': 'white' }}
           id="select-employee"
           value="Melchiorre"
           onChange={this.handleChange}

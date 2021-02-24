@@ -7,7 +7,11 @@ import AddTodoForm from './../../forms/AddTodoForm'
 class TodoView extends React.Component {
   render() {
     return (
-      <div id="todo-view-container" style={{ 'background-color': '#e6ebef' }}>
+      <div
+        id="todo-view-container"
+        className="p-2"
+        style={{ 'background-color': '#e6ebef' }}
+      >
         <FilterByEmployeeName />
         <TodoTable />
         <AddTodoForm />
