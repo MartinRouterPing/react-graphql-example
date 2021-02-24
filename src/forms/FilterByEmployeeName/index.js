@@ -13,8 +13,8 @@ class FilterByEmployeName extends React.Component {
           value=""
           onChange={this.handleChange}
         >
-          <MenuItem value={'Melchiorre'}>Mario Rossi</MenuItem>
-          <MenuItem value={'Baldassarre'}>Luca Bianchi</MenuItem>
+          <MenuItem value={'Mario Rossi'}>Mario Rossi</MenuItem>
+          <MenuItem value={'Luca Bianchi'}>Luca Bianchi</MenuItem>
           <MenuItem value={'Gaspare'}>Gaspare</MenuItem>
         </Select>
       </form>
