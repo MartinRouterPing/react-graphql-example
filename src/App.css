@@ -47,6 +47,33 @@
 .p-4 {
   padding: 40px;
 }
+/* Backgrounds and Foregrounds */
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+.bg-grey {
+  background-color: #e6ebef !important;
+}
+.bg-red {
+  background-color: #be0010 !important;
+}
+.bg-navy {
+  background-color: #2a3948 !important;
+}
+.bg-navy-light {
+  background-color: #3d4b59 !important;
+}
+.bg-navy-dark {
+  background-color: #222e3a !important;
+}
+.fg-white {
+  color: white !important;
+}
+.fg-navy-dark {
+  color: #222e3a !important;
+}
+
 /* Content id */
 
 #v-navbar-container {
@@ -71,6 +98,6 @@
 }
 #add-todo-form-container {
   background-color: #cfd8e0;
-  width: calc(90% - 20px);
+  width: calc(90% - 40px);
   margin: 0 auto;
 }

@@ -10,8 +10,13 @@ class AddTodoForm extends React.Component {
       <div id="add-todo-form-container" className="p-2">
         <form noValidate autoComplete="off">
           <div className="inner-form">
-            <TextField required id="standard-required" label="Descrizione" />
-            <Select value="Melchiorre" required>
+            <TextField
+              required
+              id="add-todo-text"
+              className="bg-white form-entry"
+              label="Descrizione"
+            />
+            <Select className="bg-white form-entry" value="Melchiorre" required>
               <MenuItem value={'Melchiorre'}>Melchiorre</MenuItem>
               <MenuItem value={'Baldassarre'}>Baldassarre</MenuItem>
               <MenuItem value={'Gaspare'}>Gaspare</MenuItem>

@@ -5,3 +5,9 @@
   display: flex;
   justify-content: space-around;
 }
+.form-entry {
+  min-width: 250px;
+}
+.done-button {
+  text-transform: lowercase !important;
+}
