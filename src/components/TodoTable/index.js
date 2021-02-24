@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import * as Constants from '../../api/constants'
+import axios from 'axios'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -10,42 +12,44 @@ import Button from '@material-ui/core/Button'
 
 //TODO: riunire tutte le dichiarazioni un una sola
 
-const todos = [
-  {
-    description: 'Report',
-    employee: 'Mario Rossi',
-    done: 'false',
-  },
-  {
-    description: 'Manutenzione',
-    employee: 'Luca Bianchi',
-    done: 'true',
-  },
-]
+const TodoTable = () => {
+  const [data, setData] = useState({ todos: [] })
+  useEffect(() => {
+    const fetchData = async () => {
+      const queryResult = await axios.post(Constants.GRAPHQL_API, {
+        query: Constants.GRAPHQL_QUERY,
+      })
+      const result = queryResult.data.data
+      setData(result)
+      // console.log('this is data.todos:')
+      // console.log(data.todos)
+    }
 
-class TodoTable extends React.Component {
-  render() {
-    return (
-      <TableContainer id="todo-table-container" component={Paper}>
-        <Table id="todo-table" aria-label="simple table">
-          <TableHead>
-            <TableRow className="bg-red">
-              <TableCell style={{ color: 'white' }} align="right">
-                Attivita
-              </TableCell>
-              <TableCell className="fg-white" align="right">
-                Operatore
-              </TableCell>
-              <TableCell align="right"></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {todos.map((row) => (
-              <TableRow key={row.name}>
+    fetchData()
+  }, [])
+
+  return (
+    <TableContainer id="todo-table-container" component={Paper}>
+      <Table id="todo-table" aria-label="simple table">
+        <TableHead>
+          <TableRow className="bg-red">
+            <TableCell style={{ color: 'white' }} align="right">
+              Attivita
+            </TableCell>
+            <TableCell className="fg-white" align="right">
+              Operatore
+            </TableCell>
+            <TableCell align="right"></TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.todos.length > 0 &&
+            data.todos.map((row) => (
+              <TableRow key={row.id}>
                 <TableCell component="th" scope="row">
-                  {row.description}
+                  {row.task}
                 </TableCell>
-                <TableCell align="right">{row.employee}</TableCell>
+                <TableCell align="right">{row.user.firstname}</TableCell>
                 <TableCell align="right">
                   <Button
                     classes={{ root: 'done-button' }}
@@ -56,10 +60,10 @@ class TodoTable extends React.Component {
                 </TableCell>
               </TableRow>
             ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    )
-  }
+        </TableBody>
+      </Table>
+    </TableContainer>
+  )
 }
+
 export default TodoTable
