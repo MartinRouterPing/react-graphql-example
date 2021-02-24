@@ -6,18 +6,15 @@ class FilterByEmployeName extends React.Component {
   render() {
     return (
       <form>
-        <label className="mb-1" style={{ display: 'block', width: '90%' }}>
-          Attività da completare
-        </label>
         <Select
           className="mb-2"
           style={{ width: '90%', 'background-color': 'white' }}
           id="select-employee"
-          value="Melchiorre"
+          value=""
           onChange={this.handleChange}
         >
-          <MenuItem value={'Melchiorre'}>Melchiorre</MenuItem>
-          <MenuItem value={'Baldassarre'}>Baldassarre</MenuItem>
+          <MenuItem value={'Melchiorre'}>Mario Rossi</MenuItem>
+          <MenuItem value={'Baldassarre'}>Luca Bianchi</MenuItem>
           <MenuItem value={'Gaspare'}>Gaspare</MenuItem>
         </Select>
       </form>

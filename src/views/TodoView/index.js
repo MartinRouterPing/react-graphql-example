@@ -12,8 +12,10 @@ class TodoView extends React.Component {
         className="p-2"
         style={{ 'background-color': '#e6ebef' }}
       >
+        <h3 className="todo-view-title">Attività da completare</h3>
         <FilterByEmployeeName />
         <TodoTable />
+        <h3 className="todo-view-title">Attività da completare</h3>
         <AddTodoForm />
       </div>
     )

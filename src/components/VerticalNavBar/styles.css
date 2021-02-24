@@ -1,0 +1,13 @@
+.vbar-button:hover {
+  background-color: #222e3a !important;
+}
+
+.vbar-button {
+  width: 100%;
+  font-size: 12px !important;
+  text-transform: initial !important;
+  border-radius: 0 !important;
+}
+.vbar-button:active {
+  border-left: 4px solid red !important;
+}
