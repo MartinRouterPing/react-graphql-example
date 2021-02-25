@@ -3,6 +3,7 @@ import './styles.css'
 import FilterByEmployeeName from './../../forms/FilterByEmployeeName'
 import TodoTable from './../../components/TodoTable'
 import AddTodoForm from './../../forms/AddTodoForm'
+import * as Constants from '../../api/constants'
 
 class TodoView extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class TodoView extends React.Component {
       >
         <h3 className="todo-view-title">Attività da completare</h3>
         <FilterByEmployeeName />
-        <TodoTable />
+        <TodoTable query={Constants.GQL_QUERY_TODO} />
         <h3 className="todo-view-title">Attività da completare</h3>
         <AddTodoForm />
       </div>
