@@ -10,7 +10,7 @@ const ViewContainer = () => {
   {
     return (
       <div id="view-container" className="flexbox">
-        <VerticalNavBar setTab={setTab} />
+        <VerticalNavBar setTab={setTab} activeTab={tab} />
         {tab == 1 && <TodoView />}
         {tab == 2 && <DoneView />}
       </div>

@@ -8,11 +8,11 @@ class DoneView extends React.Component {
   render() {
     return (
       <div
-        id="todo-view-container"
+        id="done-view-container"
         className="p-2"
         style={{ 'background-color': '#e6ebef' }}
       >
-        <h3 className="todo-view-title">Attività Completate</h3>
+        <h3 className="done-view-title">Attività Completate</h3>
         <FilterByEmployeeName />
         <TodoTable />
       </div>

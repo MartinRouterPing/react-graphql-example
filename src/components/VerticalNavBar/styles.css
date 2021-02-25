@@ -9,6 +9,7 @@
   border-radius: 0 !important;
   text-align: left !important;
 }
-.vbar-button:active {
+.red-border {
   border-left: 4px solid red !important;
+  background-color: #222e3a !important;
 }
