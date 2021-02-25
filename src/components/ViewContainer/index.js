@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 import VerticalNavBar from './../VerticalNavBar'
 import TodoView from './../../views/TodoView'
-class ViewContainer extends React.Component {
-  render() {
+import DoneView from './../../views/DoneView'
+
+const ViewContainer = () => {
+  const [tab, setTab] = useState(1)
+  console.log('tab in view cont is: ' + tab)
+  {
     return (
       <div id="view-container" className="flexbox">
-        <VerticalNavBar />
-        <TodoView />
+        <VerticalNavBar setTab={setTab} />
+        {tab == 1 && <TodoView />}
+        {tab == 2 && <DoneView />}
       </div>
     )
   }
