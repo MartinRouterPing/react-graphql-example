@@ -15,7 +15,7 @@ query todos {
 
 export const generateDoneMutation = (id) => {
   let mutation = `mutation {
-  updateTodo(id: "${id}", input: {done: false}){done}
+  updateTodo(id: "${id}", input: {done: true}){done}
 }`
   return mutation
 }

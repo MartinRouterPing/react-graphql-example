@@ -24,7 +24,6 @@ const TodoTable = () => {
       // console.log('this is data.todos:')
       // console.log(data.todos)
     }
-
     fetchData()
   }, [])
 
