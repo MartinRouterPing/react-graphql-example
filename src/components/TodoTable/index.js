@@ -9,24 +9,21 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
+import { useQuery } from '@apollo/client'
 
 //TODO: riunire tutte le dichiarazioni un una sola
 
 const TodoTable = () => {
-  const [data, setData] = useState({ todos: [] })
-  useEffect(() => {
-    const fetchData = async () => {
-      const queryResult = await axios.post(Constants.GRAPHQL_API, {
-        query: Constants.GRAPHQL_QUERY,
-      })
-      const result = queryResult.data.data
-      setData(result)
-      // console.log('this is data.todos:')
-      // console.log(data.todos)
-    }
-    fetchData()
-  }, [])
+  const [todoData, setTodoData] = useState({ todos: [] })
 
+  const { loading, error, data } = useQuery(Constants.GQL_QUERY)
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error :(</p>
+  console.log(data)
+  //console.log(todoData)
+  // console.log(loading)
+  // console.log(error)
   return (
     <TableContainer id="todo-table-container" component={Paper}>
       <Table id="todo-table" aria-label="simple table">
