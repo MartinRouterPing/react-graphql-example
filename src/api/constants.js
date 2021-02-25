@@ -5,19 +5,20 @@ export const GRAPHQL_API =
 
 export const GRAPHQL_QUERY = `
 query todos {
-    todos {
-      id
-      task
-      user {
-        firstname
-      }
-      done
+  todos(where: {done_eq: false}) {
+    id
+    task
+    user {
+      firstname
     }
+    done
   }
+}
+
 `
-export const GQL_QUERY = gql`
+export const GQL_QUERY_TODO = gql`
   query todos {
-    todos {
+    todos(where: { done_eq: false }) {
       id
       task
       user {
@@ -27,6 +28,20 @@ export const GQL_QUERY = gql`
     }
   }
 `
+
+export const GQL_QUERY_DONE = gql`
+  query todos {
+    todos(where: { done_eq: true }) {
+      id
+      task
+      user {
+        firstname
+      }
+      done
+    }
+  }
+`
+
 export const generateDoneMutation = (id) => {
   let mutation = `mutation {
   updateTodo(id: "${id}", input: {done: true}){done}

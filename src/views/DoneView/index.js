@@ -3,9 +3,10 @@ import './styles.css'
 import FilterByEmployeeName from './../../forms/FilterByEmployeeName'
 import TodoTable from './../../components/TodoTable'
 import AddTodoForm from './../../forms/AddTodoForm'
-
+import * as Constants from '../../api/constants'
 class DoneView extends React.Component {
   render() {
+    console.log(Constants.GQL_QUERY_DONE)
     return (
       <div
         id="done-view-container"
@@ -14,7 +15,7 @@ class DoneView extends React.Component {
       >
         <h3 className="done-view-title">Attività Completate</h3>
         <FilterByEmployeeName />
-        <TodoTable />
+        <TodoTable query={Constants.GQL_QUERY_DONE} />
       </div>
     )
   }

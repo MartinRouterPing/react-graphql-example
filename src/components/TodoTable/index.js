@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import * as Constants from '../../api/constants'
-import axios from 'axios'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -13,10 +12,12 @@ import { useQuery } from '@apollo/client'
 
 //TODO: riunire tutte le dichiarazioni un una sola
 
-const TodoTable = () => {
+const TodoTable = (props) => {
+  const { query } = props
   const [todoData, setTodoData] = useState({ todos: [] })
 
-  const { loading, error, data } = useQuery(Constants.GQL_QUERY)
+  console.log(query)
+  const { loading, error, data } = useQuery(Constants.GQL_QUERY_DONE)
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>

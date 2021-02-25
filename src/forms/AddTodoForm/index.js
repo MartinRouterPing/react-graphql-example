@@ -16,11 +16,11 @@ class AddTodoForm extends React.Component {
               className="bg-white form-entry"
               label="Descrizione"
             />
-            <Select className="bg-white form-entry" value="Melchiorre" required>
-              <MenuItem value={'Melchiorre'}>Melchiorre</MenuItem>
-              <MenuItem value={'Baldassarre'}>Baldassarre</MenuItem>
-              <MenuItem value={'Gaspare'}>Gaspare</MenuItem>
-            </Select>
+            <Select
+              className="bg-white form-entry"
+              value="Mario Rossi"
+              required
+            ></Select>
           </div>
         </form>
       </div>
